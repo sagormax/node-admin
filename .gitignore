@@ -2,4 +2,4 @@
 .env
 plugins
 node_modules
-storage/disk
+app/storage/disk

@@ -6,8 +6,11 @@ const port	              = 3000;
 const bodyParserConfig    = require('./config/body-parser');
 app.use(bodyParserConfig);
 
+// # static assets path
+app.use(express.static('public'));
+
 // # routers
-const routers             = require('./routes/Index');
+const routers             = require('./routes');
 app.use(routers);
 
 // # listen

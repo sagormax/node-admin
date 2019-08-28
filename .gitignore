@@ -1,0 +1,5 @@
+.idea
+.env
+plugins
+node_modules
+storage/disk

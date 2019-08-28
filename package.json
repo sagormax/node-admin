@@ -1,0 +1,18 @@
+{
+  "name": "node-admin",
+  "version": "1.0.0",
+  "description": "NodeJS admin panel",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [
+    "node-admin"
+  ],
+  "author": "Rashedul Islam Sagor <sagor.touch@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
+  }
+}

@@ -9,6 +9,6 @@ const HomeController = module.exports = {
      * @param res
      */
     index : (req, res) => {
-      res.send('Welcome to home page....');
+      res.render('home');
     }
 };

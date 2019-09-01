@@ -3,8 +3,13 @@ const app	                = express();
 const port	              = 3000;
 
 // # config
-const bodyParserConfig    = require('./config/body-parser');
-app.use(bodyParserConfig);
+const config              = require('./config/index');
+app.use(config)
+
+// # handlebars
+hbsConf                   = require('./config/handlebars');
+app.engine('hbs', hbsConf.engine);
+app.set('view engine', 'hbs');
 
 // # static assets path
 app.use(express.static('public'));

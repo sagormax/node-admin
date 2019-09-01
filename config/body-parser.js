@@ -1,11 +1,11 @@
 const express	        = require('express');
 const bodyParser      = require('body-parser');
-const app	            = express();
+const bodyParserConf  = express();
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+bodyParserConf.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
-app.use(bodyParser.json());
+bodyParserConf.use(bodyParser.json());
 
-module.exports = app;
+module.exports = bodyParserConf;

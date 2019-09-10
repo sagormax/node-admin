@@ -1,8 +1,11 @@
-const hbs             = require('express-handlebars');
+const hbs                         = require('express-handlebars');
+const express_handlebars_sections = require('express-handlebars-sections');
 
 var handlebars        = hbs.create({
   extname: '.hbs',
   helpers: {
+    section: express_handlebars_sections(),
+
     ifEquals: (arg1, arg2, options) => {
       return (arg1 === arg2) ? options.fn(this) : '';
 

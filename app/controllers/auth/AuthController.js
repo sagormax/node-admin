@@ -1,14 +1,13 @@
 /**
  * Authentication Controller
- * @type {{index: index}}
  */
 const AuthController = module.exports = {
     /**
-     * Index
+     * Login
      * @param req
      * @param res
      */
-    index : (req, res) => {
-      res.send('Auth is processing....');
+    login : (req, res) => {
+      res.render('auth/login', {layout: 'login-register-layout'});
     }
 };

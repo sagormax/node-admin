@@ -4,9 +4,17 @@ const router        = app.Router();
 const Home          = require('../app/controllers/HomeController');
 const adminRouter   = require('./admin');
 
+
+router.get('/', Home.index);
+
+// # Add admin route
+router.use('/admin', adminRouter);
+
+
 // # router middleware for flash message
 router.use((req, res, next) => {
   if(req.session.flash) {
+    console.log(req.session.flash, 'having flash...');
     // # info msg
     if(req.session.flash.info){
       res.locals.info = req.session.flash.info;
@@ -26,10 +34,5 @@ router.use((req, res, next) => {
   next();
 });
 
-
-router.get('/', Home.index);
-
-// # Add admin route
-router.use('/admin', adminRouter);
 
 module.exports = router;

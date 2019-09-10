@@ -1,4 +1,5 @@
 const express	        = require('express');
+const flash           = require('express-flash');
 const config	        = express();
 
 // # body parser
@@ -10,6 +11,9 @@ sessionConfig         = require('./session');
 
 config.use(bodyParserConf);
 config.use(sessionConfig);
+
+// # flash
+config.use(flash());
 
 
 module.exports = config;

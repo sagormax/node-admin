@@ -1,5 +1,5 @@
 const express	        = require('express');
-const flash           = require('express-flash');
+const flash           = require('express-flash-messages');
 const config	        = express();
 
 // # body parser

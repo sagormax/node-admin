@@ -5,7 +5,9 @@ var handlebars        = hbs.create({
   extname: '.hbs',
   helpers: {
     section: express_handlebars_sections(),
-
+    getFlashMessage: (arg, options) => {
+      return getMessages().arg && options(this);
+    },
     ifEquals: (arg1, arg2, options) => {
       return (arg1 === arg2) ? options.fn(this) : '';
 

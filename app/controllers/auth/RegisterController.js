@@ -1,4 +1,5 @@
 const registerURL             = '/admin/register';
+const { nodeRender }          = require('../../helpers/RenderHelper');
 const { registerValidation }  = require('../../requests/RegistrationRequest');
 
 /**
@@ -11,7 +12,7 @@ const RegisterController = module.exports = {
      * @param res
      */
     register : (req, res) => {
-      res.render('auth/register', {layout: 'login-register-layout'});
+      nodeRender('auth/register', req, res, {layout: 'login-register-layout'});
     },
 
     /**

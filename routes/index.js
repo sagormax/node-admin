@@ -11,28 +11,4 @@ router.get('/', Home.index);
 router.use('/admin', adminRouter);
 
 
-// # router middleware for flash message
-router.use((req, res, next) => {
-  if(req.session.flash) {
-    console.log(req.session.flash, 'having flash...');
-    // # info msg
-    if(req.session.flash.info){
-      res.locals.info = req.session.flash.info;
-    }
-
-    // # error msg
-    if(req.session.flash.error_msg){
-      res.locals.error_msg = req.session.flash.error_msg;
-    }
-
-    // # success msg
-    if(req.session.flash.success_msg){
-      res.locals.success_msg = req.session.flash.success_msg;
-    }
-  }
-
-  next();
-});
-
-
 module.exports = router;

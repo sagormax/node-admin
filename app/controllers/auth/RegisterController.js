@@ -1,6 +1,7 @@
 const registerURL             = '/admin/register';
 const { nodeRender }          = require('../../helpers/RenderHelper');
 const { registerValidation }  = require('../../requests/RegistrationRequest');
+const Requests                = require('./Requests');
 
 /**
  * Register Controller
@@ -12,7 +13,17 @@ const RegisterController = module.exports = {
      * @param res
      */
     register : (req, res) => {
-      nodeRender('auth/register', req, res, {layout: 'login-register-layout'});
+
+      let validation = new Requests(req, [
+        {name: 'required'},
+        {roll: 'required'}
+      ]).validate();
+
+      if( validation.valid() === false ) {
+        console.log(validation.errors);
+      }
+
+      // nodeRender('auth/register', req, res, {layout: 'login-register-layout'});
     },
 
     /**

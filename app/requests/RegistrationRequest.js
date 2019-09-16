@@ -14,8 +14,12 @@ const RegistrationRequest = module.exports = {
     return new Promise((resolve, reject) => {
       let errors = [];
 
-      if( ! req.body.namee ) {
-        errors.push('Name is required');
+      if( ! req.body.firstName ) {
+        errors.push('First Name is required');
+      }
+
+      if( ! req.body.firstName ) {
+        errors.push('First Name is required');
       }
 
       // # check errors

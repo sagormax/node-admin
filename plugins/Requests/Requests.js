@@ -1,3 +1,5 @@
+const AbstractRequest = require('./AbstractRequest');
+
 /**
  * Request class
  * Validate user requests
@@ -33,10 +35,24 @@ class Requests {
     this.rules.forEach(rule => {
       if(this.getRuleFieldName(rule)){
 
+        // # if extended new rule class
+        rule[this.ruleField] instanceof AbstractRequest && this.makeInstance(rule[this.ruleField]);
+
         // # is this field required
         this.isRequired(rule[this.ruleField]);
       }
     });
+  }
+
+  /**
+   * Create new instance
+   *
+   * @param instance
+   */
+  makeInstance(instance) {
+    if(instance.validate() === false) {
+      this.errors.push(instance.message);
+    }
   }
 
   /**

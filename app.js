@@ -1,6 +1,8 @@
 const express	            = require('express');
 const app	                = express();
-const port	              = 3001;
+
+// # todo this port comes from .env file
+const port	              = 3000;
 
 // # config
 const config              = require('./config/index');

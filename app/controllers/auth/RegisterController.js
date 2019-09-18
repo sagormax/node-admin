@@ -1,7 +1,9 @@
 const registerURL             = '/admin/register';
 const { nodeRender }          = require('../../helpers/RenderHelper');
 const { registerValidation }  = require('../../requests/RegistrationRequest');
-const Requests                = require('./Requests');
+const Requests                = require('../../../plugins/Requests/Requests');
+
+const TestRequest             = require('../../requests/TestRequest');
 
 /**
  * Register Controller
@@ -15,7 +17,7 @@ const RegisterController = module.exports = {
     register : (req, res) => {
 
       let validation = new Requests(req, [
-        {name: 'required'},
+        {name: new TestRequest()},
         {roll: 'required'}
       ]).validate();
 

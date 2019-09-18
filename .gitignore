@@ -1,5 +1,5 @@
 .idea
 .env
-plugins
+plugins/core/*
 node_modules
 app/storage/disk
